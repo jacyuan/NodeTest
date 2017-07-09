@@ -8,7 +8,11 @@ function readTest() {
     //a read stream is an event emitter that emits readable and end events.
     const stream = fs.createReadStream(
         './1.txt',
-        {encoding: 'utf8'}
+        {
+            encoding: 'utf8',
+            //Readable constructor, defines the maximum number of bytes to store before pausing.
+            highWaterMark: 40
+        }
     );
 
     stream.on('readable', function () {
