@@ -25,7 +25,10 @@ function myFileStats(filePath) {
 //a simple read file fonction with its callback function
 function myReadFile(filePath) {
     return new Promise(function (resolve, reject) {
-        fs.readFile(filePath, 'utf8', function (err, content) {
+        // fs.readFile(filePath, 'utf8', function (err, content) {
+        //     return err ? reject(err) : resolve(content);
+        // });
+        fs.readFile(filePath, function (err, content) {
             return err ? reject(err) : resolve(content);
         });
     });
